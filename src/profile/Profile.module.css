@@ -1,58 +1,57 @@
 .profile {
-  text-align: center;
-  border: black;
-  border-radius: 10px;
   background-color: blanchedalmond;
-  width: 300px;
+  border-radius: 10px;
+  border: black;
   margin-left: auto;
   margin-right: auto;
   margin-top: 24px;
+  text-align: center;
+  width: 300px;
   box-shadow: 0px 6px 3px rgb(0 0 0 / 30%), 2px 0px 2px rgb(0 0 0 / 14%), 0px 0px 9px rgb(0 0 0 / 20%);
 }
 
 .avatar{
-  margin-top: 20px;
-  box-shadow: 0px 6px 13px rgb(0 0 0 / 30%), 2px 0px 2px rgb(0 0 0 / 14%), 0px 0px 9px rgb(0 0 0 / 20%);
   border-radius: 50%;
+  box-shadow: 0px 6px 13px rgb(0 0 0 / 30%), 2px 0px 2px rgb(0 0 0 / 14%), 0px 0px 9px rgb(0 0 0 / 20%);
   height: 120px;
+  margin-top: 20px;
 }
 
 .stats{
-  display: flex;
-  justify-content: center;
-  padding-left: 0px;
   background-color: ghostwhite;
   border-top: 2px solid darkgrey;
+  display: flex;
+  justify-content: center;
   margin-bottom: 0px;
+  padding-left: 0px;
 }
 
 .tag,
 .location{
   color: darkslategrey;
   font-weight: 500;
-
 }
 
 .name,
 .quantity{
   color: darkslategrey;
-  font-weight: 700;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .quantity{
   color: darkslategrey;
-  font-weight: 700;
   font-size: 16px;
+  font-weight: 700;
 }
 
-.stats_item{
+.statsItem{
+  border-right: 2px solid darkgrey;
   display: flex;
   flex-direction: column;
-  width: 33%;
-  padding: 20px 0;
   list-style: none;
-  border-right: 2px solid darkgrey;
+  padding: 20px 0;
+  width: 33%;
 }
 
 .percentage{

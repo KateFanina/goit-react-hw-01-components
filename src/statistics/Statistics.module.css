@@ -1,29 +1,29 @@
 .statistics {
-  text-align: center;
-  border: black;
-  border-radius: 6px;
   background-color: blanchedalmond;
-  width: 400px;
+  border-radius: 6px;
+  border: black;
   margin-left: auto;
   margin-right: auto;
   margin-top: 24px;
+  text-align: center;
+  width: 400px;
   box-shadow: 0px 6px 3px rgb(0 0 0 / 30%), 2px 0px 2px rgb(0 0 0 / 14%),
     0px 0px 9px rgb(0 0 0 / 20%);
 }
 
 .title {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   background-color: #fff;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
-.stat-list {
+.statList {
+  color: white;
   display: flex;
   justify-content: center;
-  padding-left: 0px;
-  margin-top: 0px;
   margin-bottom: 0px;
-  color: white;
+  margin-top: 0px;
+  padding-left: 0px;
 }

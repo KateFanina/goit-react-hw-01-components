@@ -1,25 +1,22 @@
-import React from 'react';
-import PropTypes, { func } from 'prop-types';
-import './FriendList.css';
+import PropTypes from 'prop-types';
+import styles from'./FriendList.module.css';
 
 function FriendList(props) {
   const { friends } = props;
   return (
-    <ul className="friend-list">
+    <ul className={styles.friendList}>
       {friends.map(friend => (
-        <li className="friend-list_item" key={friend.id}>
+        <li className={styles.friendListItem} key={friend.id}>
           <span
-            style={{
-              backgroundColor: friend.isOnline ? 'green' : 'red',
-              borderRadius: '50%',
-              width: '10px',
-              height: '10px',
-            }}
+            className={[
+              styles.status,
+              friend.isOnline ? styles.green : styles.red,
+          ].join(" ")}
           >
             {friend.isOnline}
           </span>
-          <img className="friend-list_avatar" src={friend.avatar} alt={friend.name} width="48" />
-          <p className="friend-list_name">{friend.name}</p>
+          <img className={styles.friendListAvatar} src={friend.avatar} alt={friend.name} width="48" />
+          <p className={styles.friendListName}>{friend.name}</p>
         </li>
       ))}
     </ul>
@@ -27,7 +24,12 @@ function FriendList(props) {
 }
 
 FriendList.propTypes = {
-  friends: PropTypes.array.isRequired,
+  friends: PropTypes.arrayOf(PropTypes.exact({
+    avatar: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+  }))
 };
 
 export default FriendList;
