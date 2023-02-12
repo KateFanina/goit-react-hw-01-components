@@ -9,33 +9,30 @@ function Profile(props) {
     tag,
     username,
   } = props;
+  const userData = {
+    [username]: styles.name,
+    [tag]: styles.tag,
+    [location]: styles.location,
+  }
   return (
     <div className={styles.profile}>
       <div className={styles.description}>
         <img src={avatar} alt={tag} className={styles.avatar} />
-        <p className={styles.name}>{username}</p>
-        <p className={styles.tag}>{tag}</p>
-        <p className={styles.location}>{location}</p>
+        {Object.entries(userData).map(([content, dataStyle], idx) => (
+          <p className={dataStyle} key={idx}>
+            {content}
+          </p>
+        ))}
       </div>
       <ul className={styles.stats}>
-        <li className={styles.statsItem}>
-          <span className={styles.label}>Followers</span>
-          <span className={styles.quantity}>
-            <strong>{stats.followers}</strong>
-          </span>
-        </li>
-        <li className={styles.statsItem}>
-          <span className={styles.label}>Views</span>
-          <span className={styles.quantity}>
-            <strong>{stats.views}</strong>
-          </span>
-        </li>
-        <li className={styles.statsItem}>
-          <span className={styles.label}>Likes</span>
-          <span className={styles.quantity}>
-            <strong>{stats.likes}</strong>
-          </span>
-        </li>
+        {Object.entries(stats).map(([name, value]) => (
+          <li className={styles.statsItem} key={name}>
+            <span className={styles.label}>{name}</span>
+            <span className={styles.quantity}>
+              <strong>{value}</strong>
+            </span>
+          </li>
+        ))}
       </ul>
     </div>
   );
